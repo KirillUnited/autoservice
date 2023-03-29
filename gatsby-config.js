@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `СТО на Стебенева 12 в Минске`,
+    description: `СТО Риа Моторс - любые работы по ремонту Вашего авто ✅ Скидки и акции ✅ 13 лет опыта ✆ Звоните: +375 29 372 63 65`,
+    author: ``,
+    siteUrl: `https://riamotors.by/`,
   },
   plugins: [
     `gatsby-plugin-image`,
