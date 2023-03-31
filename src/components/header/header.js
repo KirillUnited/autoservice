@@ -9,7 +9,7 @@ const menu = {
   'Ремонт автомобилей': null,
   'Обслуживание юр. лиц': null,
   'Клиентам': {
-    href: '/',
+    href: '/path',
     submenu: [
       'Способы оплаты, рассрочка',
       'Гарантия',
@@ -45,7 +45,7 @@ const Header = ({ siteTitle }) => {
             </div>
           </div>
           <div className={styles.cta}>
-            <button type="button" className="btn">Запись на ремонт</button>
+            <button type="button" className="btn-primary">Запись на ремонт</button>
             <p className="mb-0 font-semibold"><strong className="font-semibold">Пон. - Пят. 8.00 - 20.00</strong></p>
           </div>
           <div className={styles.contacts}>
@@ -61,14 +61,14 @@ const Header = ({ siteTitle }) => {
             <ul className="flex flex-wrap items-center justify-center p-2">
               {Object.entries(menu).map(([key, value], i) => {
                 return (
-                  <li className="relative">
-                    <Link to={value?.href} className="text-white font-medium px-3 leading-8" key={key}>{key}</Link>
+                  <li className="relative" key={i}>
+                    <Link to={value?.href ? value.href : ''} className="text-white font-medium px-3 leading-8 peer" key={key}>{key}</Link>
                     {
                       value?.submenu
                       &&
-                      <ul class="flex flex-col absolute">
+                      <ul className="flex-col absolute hidden peer-hover:flex hover:flex">
                         {value.submenu.map((item) => {
-                          return <li>{item}</li>
+                          return <li key={item}>{item}</li>
                         })}
                       </ul>
                     }
