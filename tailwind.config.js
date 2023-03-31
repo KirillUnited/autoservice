@@ -17,7 +17,8 @@ module.exports = {
     },
     colors:{
       ...colors,
-      'orange': '#f2a00a'
+      'primary': '#13AFF0',
+      'secondary': '#f2a00a',
     },
     extend: {},
   },
