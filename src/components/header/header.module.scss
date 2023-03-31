@@ -1,0 +1,6 @@
+.cta {
+    @apply hidden basis-full md:basis-1/4 md:flex flex-col items-center justify-center p-2 gap-1
+}
+.contacts{
+    @apply basis-full md:basis-1/4 flex flex-col md:items-end justify-center p-2 gap-1
+}

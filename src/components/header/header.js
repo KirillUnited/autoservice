@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import logo from "../../images/logo.png"
+import * as styles from "./header.module.scss"
 
 const menu = {
   'Автосервис РиаМоторс': null,
@@ -43,11 +44,11 @@ const Header = ({ siteTitle }) => {
               </p>
             </div>
           </div>
-          <div className="hidden basis-full md:basis-1/4 md:flex flex-col items-center justify-center p-2 gap-1">
-            <button type="button" className="transition text-white bg-primary hover:bg-white hover:text-primary border-primary border-2 px-6 py-2 rounded-xl">Запись на ремонт</button>
+          <div className={styles.cta}>
+            <button type="button" className="btn">Запись на ремонт</button>
             <p className="mb-0 font-semibold"><strong className="font-semibold">Пон. - Пят. 8.00 - 20.00</strong></p>
           </div>
-          <div className="basis-full md:basis-1/4 flex flex-col md:items-end justify-center p-2 gap-1">
+          <div className={styles.contacts}>
             <a className="font-semibold" href="tel:+375 29 372 63 65">+375 29 372 63 65</a>
             <a className="font-semibold" href="tel:+375 29 872 63 65">+375 29 872 63 65</a>
             <a className="font-semibold" href="viber://chat?number=%2B375293726365">Написать в Viber</a>

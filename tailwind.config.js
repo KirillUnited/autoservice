@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   content: [
     "./src/pages/**/*.{js,jsx,ts,tsx}",
@@ -15,12 +13,12 @@ module.exports = {
       'md': '1024px',
       'lg': '1140px',
     },
-    colors:{
-      ...colors,
-      'primary': '#13AFF0',
-      'secondary': '#f2a00a',
+    extend: {
+      colors: {
+        'primary': '#13AFF0',
+        'secondary': '#f2a00a',
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
