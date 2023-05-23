@@ -7,8 +7,3 @@
     color: #4a4a4a;
   }
 }
-@layer components{
-    .btn-primary {
-        @apply transition text-white bg-primary hover:bg-transparent hover:text-primary border-primary border-2 px-6 py-2 rounded-xl;
-    }
-}
