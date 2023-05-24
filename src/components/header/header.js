@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import logo from "../../images/logo.png"
 import * as styles from "./header.module.scss"
-import Button from "../button/button";
+import Button from "../button/Button";
 
 const menu = {
   'Автосервис РиаМоторс': null,
