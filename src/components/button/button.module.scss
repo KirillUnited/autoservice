@@ -1,6 +1,6 @@
 .btn {
-  @apply transition px-6;
-  min-height: var(--min-height, 43px);
+  @apply flex items-center justify-center transition px-6;
+  min-height: var(--min-height, 44px);
   border-radius: 10px;
   border: 2px solid transparent;
 
