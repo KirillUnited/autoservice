@@ -4,6 +4,7 @@
 
 @layer base {
   body {
+    font-family: "Montserrat", sans-serif;
     color: #4a4a4a;
   }
 }

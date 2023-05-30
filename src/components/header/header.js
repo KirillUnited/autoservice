@@ -24,9 +24,9 @@ const Header = ({ siteTitle }) => {
     <header id="site-header" className="header" role="banner">
       <section className="relative">
         <div className="container flex flex-wrap justify-between">
-          <div className="flex p-2 basis-full md:basis-1/2 gap-2 items-center justify-between">
-            <div className="basis-[30%] lg:basis-[40%]">
-              <img className="mb-0"
+          <div className="flex py-2 basis-full md:basis-1/2 gap-2 items-center justify-between">
+            <div className={styles.logo}>
+              <img
                 src={logo}
                 width={170}
                 height={86}
@@ -34,12 +34,12 @@ const Header = ({ siteTitle }) => {
               />
             </div>
             <div className="flex-1">
-              <p className="mb-1">
+              <p className="text-sm mb-1">
                 <strong className="font-semibold">ООО «РиаМоторс»</strong>
                 <br />
                 Станция технического обслуживания
               </p>
-              <p className="text-secondary mb-0">
+              <p className="text-sm text-secondary mb-0">
                 <strong className="font-semibold"><em>Гарантия качества для Вас!</em></strong>
               </p>
             </div>
