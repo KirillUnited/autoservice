@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import logo from "../../images/logo.png"
 import * as styles from "./header.module.scss"
+import OrderModal from "../modal/OrderModal";
 
 const menu = {
   'Автосервис РиаМоторс': null,
@@ -45,6 +46,7 @@ const Header = ({ siteTitle }) => {
             </div>
           </div>
           <div className={styles.cta}>
+            <OrderModal></OrderModal>
             <p className="mb-0 font-semibold"><strong className="font-semibold">Пон. - Пят. 8.00 - 20.00</strong></p>
           </div>
           <div className={styles.contacts}>

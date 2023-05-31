@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: #13AFF0;
+    --color-secondary: #f2a00a;
+  }
   body {
     font-family: "Montserrat", sans-serif;
     color: #4a4a4a;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    border: 2px solid transparent;
+    @apply text-white bg-primary hover:bg-transparent hover:text-primary border-primary;
   }
 }
