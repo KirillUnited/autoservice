@@ -49,10 +49,10 @@ const Header = ({ siteTitle }) => {
             <OrderModal></OrderModal>
             <p className="mb-0 font-semibold"><strong className="font-semibold">Пон. - Пят. 8.00 - 20.00</strong></p>
           </div>
-          <div className={styles.contacts}>
-            <a className="font-semibold" href="tel:+375 29 372 63 65">+375 29 372 63 65</a>
-            <a className="font-semibold" href="tel:+375 29 872 63 65">+375 29 872 63 65</a>
-            <a className="font-semibold" href="viber://chat?number=%2B375293726365">Написать в Viber</a>
+          <div className={`${styles.contacts}`}>
+            <a className="hover:text-secondary transition-colors" href="tel:+375 29 372 63 65">+375 29 372 63 65</a>
+            <a className="hover:text-secondary transition-colors" href="tel:+375 29 872 63 65">+375 29 872 63 65</a>
+            <a className="hover:text-secondary transition-colors" href="viber://chat?number=%2B375293726365">Написать в Viber</a>
           </div>
         </div>
       </section>

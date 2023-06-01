@@ -2,7 +2,7 @@
   @apply hidden basis-full md:basis-1/4 md:flex flex-col items-center justify-center py-2 gap-1;
 }
 .contacts {
-  @apply basis-full md:basis-1/4 flex flex-col md:items-end justify-center py-2 gap-1;
+  @apply basis-full md:basis-1/4 flex flex-col md:items-end justify-center py-2 gap-1 font-semibold;
 }
 .logo {
   @apply basis-[30%] lg:basis-[40%];
