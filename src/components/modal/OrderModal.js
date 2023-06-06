@@ -18,34 +18,41 @@ const OrderModal = (props) => {
     const handleClose = () => {
         setOpen(false)
     }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        alert("Form submit!");
+    }
 
     return (
         <div>
             <Button variant="contained" size="large" className="btn-primary" onClick={handleClickOpen}>Запись на ремонт</Button>
             <Dialog open={open} onClose={handleClose} maxWidth={`md`}>
-                <DialogTitle>Запись на ремонт</DialogTitle>
-                <DialogContent>
-                    {textFields.map((field) => {
-                        return (
-                            <TextField
-                                margin="dense"
-                                id={field.id}
-                                label={field.label}
-                                type={field.type}
-                                fullWidth
-                                variant="standard"
-                                required={field.required}
-                                key={field.label}
-                            />
-                        )
-                    })}
-                    <FormGroup>
-                        <FormControlLabel control={<Checkbox defaultChecked />} label="Соглашаюсь на обработку персональных данных" />
-                    </FormGroup>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose} variant="contained" className="btn-primary w-full">Отправить</Button>
-                </DialogActions>
+                <DialogTitle className="text-3xl">Запись на ремонт</DialogTitle>
+                <form onSubmit={handleSubmit}>
+                    <DialogContent>
+                        {textFields.map((field) => {
+                            return (
+                                <TextField
+                                    margin="dense"
+                                    id={field.id}
+                                    label={field.label}
+                                    type={field.type}
+                                    fullWidth
+                                    variant="standard"
+                                    required={field.required}
+                                    key={field.label}
+                                />
+                            )
+                        })}
+                        <FormGroup>
+                            <FormControlLabel control={<Checkbox defaultChecked required/>} label="Соглашаюсь на обработку персональных данных" />
+                        </FormGroup>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button variant="contained" className="btn-primary w-full" type="submit">Отправить</Button>
+                    </DialogActions>
+                </form>
             </Dialog>
         </div>
     )
