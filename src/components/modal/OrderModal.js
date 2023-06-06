@@ -1,4 +1,5 @@
 import * as React from "react";
+import { textFields } from "./orderModal.data";
 import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
@@ -24,50 +25,20 @@ const OrderModal = (props) => {
             <Dialog open={open} onClose={handleClose} maxWidth={`md`}>
                 <DialogTitle>Запись на ремонт</DialogTitle>
                 <DialogContent>
-                    <TextField
-                        margin="dense"
-                        id="form_fields[name]"
-                        label="Модель автомобиля"
-                        type="text"
-                        fullWidth
-                        variant="standard"
-                        required
-                    />
-                    <TextField
-                        margin="dense"
-                        id="form_fields[name]"
-                        label="VIN"
-                        type="text"
-                        fullWidth
-                        variant="standard"
-                    />
-                    <TextField
-                        margin="dense"
-                        id="form_fields[name]"
-                        label="Неисправности в автомобиле"
-                        type="text"
-                        fullWidth
-                        variant="standard"
-                        required
-                    />
-                    <TextField
-                        margin="dense"
-                        id="form_fields[name]"
-                        label="Имя"
-                        type="text"
-                        fullWidth
-                        variant="standard"
-                        required
-                    />
-                    <TextField
-                        margin="dense"
-                        id="form_fields[name]"
-                        label="Телефон"
-                        type="text"
-                        fullWidth
-                        variant="standard"
-                        required
-                    />
+                    {textFields.map((field) => {
+                        return (
+                            <TextField
+                                margin="dense"
+                                id={field.id}
+                                label={field.label}
+                                type={field.type}
+                                fullWidth
+                                variant="standard"
+                                required={field.required}
+                                key={field.label}
+                            />
+                        )
+                    })}
                     <FormGroup>
                         <FormControlLabel control={<Checkbox defaultChecked />} label="Соглашаюсь на обработку персональных данных" />
                     </FormGroup>
