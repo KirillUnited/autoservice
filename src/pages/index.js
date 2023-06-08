@@ -14,7 +14,16 @@ const theme = createTheme({
     secondary: {
       main: window.getComputedStyle(document.body).getPropertyValue('--color-secondary'),
     },
-  },
+    text:{
+      primary: window.getComputedStyle(document.body).getPropertyValue('--color-text'),
+    }
+  }, 
+  typography: {
+    fontFamily: [
+      '"Montserrat"',
+      'sans-serif'
+    ].join(','),
+  }
 });
 const IndexPage = () => (
   <StyledEngineProvider injectFirst>

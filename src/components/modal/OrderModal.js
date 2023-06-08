@@ -8,7 +8,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
 
 const OrderModal = (props) => {
     const [open, setOpen] = React.useState(false);
@@ -28,9 +27,9 @@ const OrderModal = (props) => {
         <div>
             <Button variant="contained" size="large" className="btn-primary" onClick={handleClickOpen}>Запись на ремонт</Button>
             <Dialog open={open} onClose={handleClose} maxWidth={`md`}>
-                <DialogTitle className="text-3xl">Запись на ремонт</DialogTitle>
                 <form onSubmit={handleSubmit}>
                     <DialogContent>
+                        <h2 className="text-3xl">Запись на ремонт</h2>
                         {textFields.map((field) => {
                             return (
                                 <TextField
@@ -46,7 +45,7 @@ const OrderModal = (props) => {
                             )
                         })}
                         <FormGroup>
-                            <FormControlLabel control={<Checkbox defaultChecked required/>} label="Соглашаюсь на обработку персональных данных" />
+                            <FormControlLabel control={<Checkbox defaultChecked required />} label="Соглашаюсь на обработку персональных данных" />
                         </FormGroup>
                     </DialogContent>
                     <DialogActions>

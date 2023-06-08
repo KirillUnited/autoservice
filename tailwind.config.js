@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         'primary': 'var(--color-primary)',
         'secondary': 'var(--color-secondary)',
+        'text': 'var(--color-text)',
       },
     },
   },

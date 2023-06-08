@@ -4,18 +4,17 @@
 
 @layer base {
   :root {
-    --color-primary: #13AFF0;
+    --color-primary: #13aff0;
     --color-secondary: #f2a00a;
+    --color-text: #4a4a4a;
   }
   body {
     font-family: "Montserrat", sans-serif;
-    color: #4a4a4a;
+    color: var(--color-text);
   }
 }
 
 @layer components {
-  .btn-primary {
-    border: 2px solid transparent;
-    @apply text-white bg-primary hover:bg-transparent hover:text-primary border-primary;
-  }
+  @import "./layout";
+  @import "./button";
 }

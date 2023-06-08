@@ -1,0 +1,4 @@
+.btn-primary {
+  border: 2px solid transparent;
+  @apply text-white bg-primary hover:bg-transparent hover:text-primary border-primary;
+}
