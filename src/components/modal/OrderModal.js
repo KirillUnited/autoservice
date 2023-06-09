@@ -1,6 +1,6 @@
 import * as React from "react";
 import { textFields } from "./orderModal.data";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
@@ -8,6 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
+import * as style from "./order-modal.module.scss";
 
 const OrderModal = (props) => {
     const [open, setOpen] = React.useState(false);
@@ -27,18 +28,18 @@ const OrderModal = (props) => {
         <div>
             <Button variant="contained" size="large" className="btn-primary" onClick={handleClickOpen}>Запись на ремонт</Button>
             <Dialog open={open} onClose={handleClose} maxWidth={`md`}>
-                <form onSubmit={handleSubmit}>
+                <Box component="form" onSubmit={handleSubmit}>
                     <DialogContent>
-                        <h2 className="text-3xl">Запись на ремонт</h2>
+                        <h2 className={`${style.title}`}>Запись на ремонт</h2>
                         {textFields.map((field) => {
                             return (
                                 <TextField
-                                    margin="dense"
+                                    margin="normal"
                                     id={field.id}
                                     label={field.label}
                                     type={field.type}
                                     fullWidth
-                                    variant="standard"
+                                    variant="outlined"
                                     required={field.required}
                                     key={field.label}
                                 />
@@ -51,7 +52,7 @@ const OrderModal = (props) => {
                     <DialogActions>
                         <Button variant="contained" className="btn-primary w-full" type="submit">Отправить</Button>
                     </DialogActions>
-                </form>
+                </Box>
             </Dialog>
         </div>
     )

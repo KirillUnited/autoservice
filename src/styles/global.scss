@@ -7,9 +7,10 @@
     --color-primary: #13aff0;
     --color-secondary: #f2a00a;
     --color-text: #4a4a4a;
+    --font-primary: "Montserrat", sans-serif;
   }
   body {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-primary);
     color: var(--color-text);
   }
 }

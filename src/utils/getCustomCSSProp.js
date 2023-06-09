@@ -1,0 +1,1 @@
+export const getCustomCSSProp = (name = '') => window.getComputedStyle(document.body).getPropertyValue(name);

@@ -1,28 +1,24 @@
 import * as React from "react"
 import { StyledEngineProvider, ThemeProvider, createTheme } from "@mui/material";
-// import { Link } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { getCustomCSSProp } from "../utils/getCustomCSSProp";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: window.getComputedStyle(document.body).getPropertyValue('--color-primary'),
+      main: getCustomCSSProp('--color-primary'),
     },
     secondary: {
-      main: window.getComputedStyle(document.body).getPropertyValue('--color-secondary'),
+      main: getCustomCSSProp('--color-secondary'),
     },
-    text:{
-      primary: window.getComputedStyle(document.body).getPropertyValue('--color-text'),
+    text: {
+      primary: getCustomCSSProp('--color-text'),
     }
-  }, 
+  },
   typography: {
-    fontFamily: [
-      '"Montserrat"',
-      'sans-serif'
-    ].join(','),
+    fontFamily: [getCustomCSSProp('--font-primary')].join(','),
   }
 });
 const IndexPage = () => (
