@@ -19,7 +19,16 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [getCustomCSSProp('--font-primary')].join(','),
-  }
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 767,
+      md: 1024,
+      lg: 1140,
+      xl: 1440,
+    },
+  },
 });
 const IndexPage = () => (
   <StyledEngineProvider injectFirst>
