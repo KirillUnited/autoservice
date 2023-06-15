@@ -1,6 +1,6 @@
 import * as React from "react";
 import { textFields } from "./orderModal.data";
-import { Box, Button, IconButton } from "@mui/material";
+import { Alert, Box, Button, IconButton, Snackbar } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
@@ -23,12 +23,22 @@ const initValues = () => {
 
 const OrderModal = (props) => {
     const [open, setOpen] = React.useState(false);
+    const [showAlert, setShowAlert] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
     };
     const handleClose = () => {
         setOpen(false)
     }
+    const handleAlertShow = () => {
+        setShowAlert(true)
+    };
+    const handleAlertHide = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setShowAlert(false)
+    };
     const [values, setValues] = React.useState({
         ...initValues()
     });
@@ -64,12 +74,20 @@ const OrderModal = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log(values);
+        handleAlertShow();
         setValues(initValues);
+        setOpen(false);
     }
 
     return (
         <>
+            {showAlert && (
+                <Snackbar open={showAlert} autoHideDuration={6000} onClose={handleAlertHide}>
+                    <Alert onClose={handleAlertHide} severity="success" sx={{ width: '100%' }}>
+                        Data are sent
+                    </Alert>
+                </Snackbar>
+            )}
             <Button variant="contained" size="large" className="btn-primary" onClick={handleClickOpen}>Запись на ремонт</Button>
             <Dialog open={open} onClose={handleClose} maxWidth={`md`}>
                 <IconButton
