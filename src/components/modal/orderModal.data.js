@@ -1,33 +1,43 @@
 const textFields = [
     {
-        id: "form_fields[name]",
+        id: "model",
+        name: "model",
         label: "Модель автомобиля",
         type: "text",
-        required: true
+        required: true,
+        value: ""
     },
     {
-        id: "form_fields[name]",
+        id: "VIN",
+        name: "VIN",
         label: "VIN",
         type: "text",
-        required: false
+        required: false,
+        value: ""
     },
     {
-        id: "form_fields[name]",
+        id: "issues",
+        name: "issues",
         label: "Неисправности в автомобиле",
         type: "text",
-        required: true
+        required: true,
+        value: ""
     },
     {
-        id: "form_fields[name]",
+        id: "name",
+        name: "name",
         label: "Имя",
         type: "text",
-        required: true
+        required: true,
+        value: ""
     },
     {
-        id: "form_fields[name]",
+        id: "phone",
+        name: "phone",
         label: "Телефон",
         type: "text",
-        required: true
+        required: true,
+        value: ""
     },
 ]
 

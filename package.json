@@ -10,6 +10,8 @@
     "@fontsource/montserrat": "^5.0.1",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
+    "formik": "^2.4.1",
+    "formik-mui": "^5.0.0-alpha.0",
     "gatsby": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-manifest": "^5.7.0",
