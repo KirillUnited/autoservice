@@ -10,6 +10,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import * as style from "./order-modal.module.scss";
 import CloseIcon from '@mui/icons-material/Close';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const initValues = () => {
     const result = {};
@@ -24,6 +26,8 @@ const initValues = () => {
 const OrderModal = (props) => {
     const [open, setOpen] = React.useState(false);
     const [showAlert, setShowAlert] = React.useState(false);
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -89,7 +93,7 @@ const OrderModal = (props) => {
                 </Snackbar>
             )}
             <Button variant="contained" size="large" className="btn-primary" onClick={handleClickOpen}>Запись на ремонт</Button>
-            <Dialog open={open} onClose={handleClose} maxWidth={`md`}>
+            <Dialog open={open} onClose={handleClose} maxWidth={`md`} fullScreen={fullScreen}>
                 <IconButton
                     aria-label="close"
                     onClick={handleClose}
@@ -130,7 +134,7 @@ const OrderModal = (props) => {
                         </FormGroup>
                     </DialogContent>
                     <DialogActions>
-                        <Button variant="contained" className={"btn-primary w-full"} type="submit" disabled={!formIsValid()}>Отправить</Button>
+                        <Button variant="contained" size="large" className={"btn-primary w-full"} type="submit" disabled={!formIsValid()}>Отправить</Button>
                     </DialogActions>
                 </Box>
             </Dialog>
