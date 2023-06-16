@@ -1,6 +1,6 @@
 import * as React from "react";
 import { textFields } from "./orderModal.data";
-import { Alert, Box, Button, IconButton, Snackbar } from "@mui/material";
+import { Alert, Box, Button, IconButton, Slide, Snackbar } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
@@ -80,18 +80,24 @@ const OrderModal = (props) => {
 
         handleAlertShow();
         setValues(initValues);
-        setOpen(false);
+        setTimeout(() => {
+            setOpen(false);
+        }, 2000);
     }
 
     return (
         <>
-            {showAlert && (
-                <Snackbar open={showAlert} autoHideDuration={6000} onClose={handleAlertHide}>
-                    <Alert onClose={handleAlertHide} severity="success" sx={{ width: '100%' }}>
-                        Data are sent
-                    </Alert>
-                </Snackbar>
-            )}
+            <Snackbar
+                open={showAlert}
+                autoHideDuration={6000}
+                onClose={handleAlertHide}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                TransitionComponent={Slide}
+            >
+                <Alert onClose={handleAlertHide} severity="success" sx={{ width: '100%' }}>
+                    Data are sent
+                </Alert>
+            </Snackbar>
             <Button variant="contained" size="large" className="btn-primary" onClick={handleClickOpen}>Запись на ремонт</Button>
             <Dialog open={open} onClose={handleClose} maxWidth={`md`} fullScreen={fullScreen}>
                 <IconButton
