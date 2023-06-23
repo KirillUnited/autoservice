@@ -4,6 +4,7 @@ import { StyledEngineProvider, ThemeProvider, createTheme } from "@mui/material"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { getCustomCSSProp } from "../utils/getCustomCSSProp";
+import Hero from "../components/hero/Hero";
 
 const theme = createTheme({
   palette: {
@@ -34,7 +35,7 @@ const IndexPage = () => (
   <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>
       <Layout>
-        CONTENT
+        <Hero/>
       </Layout>
     </ThemeProvider>
   </StyledEngineProvider>
