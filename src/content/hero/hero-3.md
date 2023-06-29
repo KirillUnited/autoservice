@@ -5,4 +5,5 @@ img:
 title: Развал-схождение
 subtitle: "36,00 р"
 description: ""
+link: "https://riamotors.by/uslugi/remont-tormoznoj-sistemy/"
 ---
