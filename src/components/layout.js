@@ -9,7 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import * as style from "./layout.module.scss";
-import Header from "./header/Header";
+import Header from "./Header";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
