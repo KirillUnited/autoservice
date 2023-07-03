@@ -26,6 +26,7 @@ export default function HeroSection({childern}) {
                 link
               }
               html
+              id
             }
           }
       }
