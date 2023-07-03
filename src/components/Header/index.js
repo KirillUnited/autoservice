@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import logo from "../../images/logo.png"
+import logo from "../../assets/images/logo.png"
 import * as styles from "./styles.module.scss"
 import { OrderModal } from "../Modals";
 
