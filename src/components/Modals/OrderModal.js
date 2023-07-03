@@ -8,7 +8,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import * as style from "./order-modal.module.scss";
+import * as style from "./OrderModal.module.scss";
 import CloseIcon from '@mui/icons-material/Close';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled, useTheme } from '@mui/material/styles';

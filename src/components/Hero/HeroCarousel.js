@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel from 'react-material-ui-carousel';
 import { Button, Card } from '@mui/material'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import { getCustomCSSProp } from "../../../utils/getCustomCSSProp";
+import { getCustomCSSProp } from "../../utils/getCustomCSSProp";
 
 export default function HeroCarousel(props) {
     const { data } = props;
