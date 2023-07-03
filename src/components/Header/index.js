@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import logo from "../../images/logo.png"
+import logo from "../../assets/images/logo.png"
 import * as styles from "./styles.module.scss"
-import OrderModal from "../modal/OrderModal";
+import { OrderModal } from "../Modals";
 
 const menu = {
   'Автосервис РиаМоторс': null,

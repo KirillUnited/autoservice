@@ -3,10 +3,10 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby';
 import HeroCarousel from './HeroCarousel';
 
-export default function Hero() {
+export default function HeroSection({childern}) {
     const data = useStaticQuery(graphql`
     query MyQuery {
-        allMarkdownRemark {
+        allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(content/hero)/"}}) {
             nodes {
               frontmatter {
                 description
@@ -26,6 +26,7 @@ export default function Hero() {
                 link
               }
               html
+              id
             }
           }
       }
