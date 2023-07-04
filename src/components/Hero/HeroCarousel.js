@@ -1,40 +1,34 @@
 import React from 'react'
-import Carousel from 'react-material-ui-carousel';
-import { getCustomCSSProp } from "../../utils/getCustomCSSProp";
 import HeroCarouselItem from './HeroCarouselItem';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import * as styles from './HeroCarousel.module.scss';
 
 export default function HeroCarousel(props) {
     const { data } = props;
 
     return (
-        <Carousel
-            navButtonsAlwaysVisible={true}
-            navButtonsProps={{
-                style: {
-                    backgroundColor: getCustomCSSProp('--color-primary'),
-                    opacity: 0.8
-                }
+        <Swiper
+            className={styles['carousel']}
+            modules={[Navigation, Pagination, Autoplay, A11y]}
+            pagination={{ clickable: true }}
+            navigation={{ clickable: true }}
+            autoplay={{
+                delay: 5000,
             }}
-            indicatorIconButtonProps={{
-                style: {
-                    color: getCustomCSSProp('--color-primary')
-                }
-            }}
-            activeIndicatorIconButtonProps={{
-                style: {
-                    color: getCustomCSSProp('--color-secondary')
-                }
-            }}
-            sx={{
-                overflow: 'visible'
-            }}>
-
-
+            loop={true}
+            speed={500}
+        >
             {data.map((item, index) => {
                 return (
-                    <HeroCarouselItem key={item.id} data={item.frontmatter} />
+                    <SwiperSlide key={item.id}>
+                        <HeroCarouselItem data={item.frontmatter} />
+                    </SwiperSlide>
                 )
             })}
-        </Carousel>
+        </Swiper>
     )
 }
