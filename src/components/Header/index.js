@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import logo from "../../assets/images/logo.png"
 import * as styles from "./styles.module.scss"
 import { OrderModal } from "../Modals";
+import HeaderCarousel from "./HeaderCarousel";
 
 const menu = {
   'Автосервис РиаМоторс': null,
@@ -19,6 +20,23 @@ const menu = {
   },
   'Контакты': null
 };
+const autoModels = [
+  {
+    name: "renault",
+    link: "https://riamotors.by/auto/renault-reno/",
+    logo: "https://riamotors.by/wp-content/uploads/2021/04/1-150x150.png"
+  },
+  {
+    name: "peugeot",
+    link: "https://riamotors.by/auto/peugeot-pezho/",
+    logo: "https://riamotors.by/wp-content/uploads/2021/04/2-150x150.png"
+  },
+  {
+    name: "citroen",
+    link: "https://riamotors.by/auto/citroen-sitroen/",
+    logo: "https://riamotors.by/wp-content/uploads/2021/04/3-150x150.png"
+  },
+];
 
 const Header = ({ siteTitle }) => {
   return (
@@ -78,6 +96,11 @@ const Header = ({ siteTitle }) => {
               })}
             </ul>
           </nav>
+        </div>
+      </section>
+      <section className="bg-[#F8F8F8]">
+        <div className="container">
+          <HeaderCarousel data={autoModels}/>
         </div>
       </section>
     </header>

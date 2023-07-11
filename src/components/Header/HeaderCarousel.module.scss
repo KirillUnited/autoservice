@@ -1,0 +1,5 @@
+.carousel {
+  --swiper-navigation-color: var(--color-primary);
+  --swiper-pagination-color: var(--color-primary);
+  @apply pb-4 h-[100px];
+}
