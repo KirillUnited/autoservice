@@ -1,6 +1,6 @@
 import * as React from "react";
 import { textFields } from "./orderModal.data";
-import { Alert, Box, Button, CircularProgress, IconButton, Slide, Snackbar } from "@mui/material";
+import { Alert, Box, Button, IconButton, Slide, Snackbar } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import FormGroup from '@mui/material/FormGroup';
 import Checkbox from '@mui/material/Checkbox';
@@ -11,7 +11,8 @@ import DialogContent from '@mui/material/DialogContent';
 import * as style from "./OrderModal.module.scss";
 import CloseIcon from '@mui/icons-material/Close';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { styled, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
+import Loading from "../Loading";
 
 const initValues = () => {
     const result = {};
@@ -76,31 +77,6 @@ const OrderModal = (props) => {
         return Object.values(fields).every((x) => x !== "") &&
             Object.values(errors).every((x) => x === "");
     };
-    const DisabledBackground = styled(Box)({
-        width: "100%",
-        height: "100%",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        background: "#ccc",
-        opacity: 0.5,
-        zIndex: 10000
-    });
-    const Loading = () => (
-        <>
-            <CircularProgress
-                size={64}
-                sx={{
-                    position: "fixed",
-                    left: "50%",
-                    top: "50%",
-                    transform: "translate(-50%, -50%)",
-                    zIndex: 20000
-                }}
-            />
-            <DisabledBackground />
-        </>
-    );
     const handleSubmit = (event) => {
         event.preventDefault();
         let formData = { ...values };
