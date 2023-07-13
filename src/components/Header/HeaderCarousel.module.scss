@@ -1,5 +1,9 @@
 .carousel {
   --swiper-navigation-color: var(--color-primary);
   --swiper-pagination-color: var(--color-primary);
-  @apply pb-4 h-[100px];
+  --swiper-pagination-bottom: 0;
+  @apply pb-4 md:pb-0 h-[100px];
+}
+.wrapper {
+  @apply flex md:justify-center;
 }
