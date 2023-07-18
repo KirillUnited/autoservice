@@ -1,5 +1,5 @@
 import React from "react";
-import { textFields } from "../components/Modals/orderModal.data";
+import { textFields } from "../components/Forms/orderForm.data";
 
 export default function useForm(initialFormValues) {
     const [values, setValues] = React.useState({
