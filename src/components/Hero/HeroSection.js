@@ -35,8 +35,8 @@ export default function HeroSection({ childern }) {
   const { nodes = [] } = data?.allMarkdownRemark || {};
 
   return (
-    <section className='py-4'>
-      <div className='container'>
+    <section>
+      <div className='container max-w-full px-0'>
         <HeroCarousel data={nodes} />
       </div>
     </section>
