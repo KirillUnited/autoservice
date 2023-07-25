@@ -36,24 +36,30 @@ export default function useForm(initialFormValues) {
         return Object.values(fields).every((x) => x !== "") &&
             Object.values(errors).every((x) => x === "");
     };
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const postFormData = async () => {
         let formData = { ...values };
 
-        new Promise((resolve, reject) => {
-            setValues({...values, isSubmitting: true})
+        return new Promise((resolve, reject) => {
+            setValues({ ...values, isSubmitting: true });
             setTimeout(() => {
+                setValues({
+                    ...initialFormValues,
+                    isSubmitting: false,
+                    formSubmitted: true
+                });
                 resolve(`Model: ${formData.model}\nName: ${formData.name}\n`);
             }, 2000);
         }).then((result) => {
-            setValues({
-                ...initialFormValues,
-                isSubmitting: false,
-                formSubmitted: true,
-            });
-            event.target.reset();
-            console.log(formData);
+            console.table(result);
         }).catch(error => console.log(error));
+    }
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (!formIsValid()) return;
+
+        await postFormData();
+        event.target.reset();
     }
 
     return {

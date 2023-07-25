@@ -39,7 +39,7 @@ const OrderModal = (props) => {
                     Запись на ремонт
                 </DialogTitle>
                 <DialogContent>
-                    <OrderForm />
+                    <OrderForm onSuccess={handleClose} />
                 </DialogContent>
             </Dialog>
         </>
