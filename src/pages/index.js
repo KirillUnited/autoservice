@@ -26,20 +26,43 @@ const theme = createTheme({
       xs: 0,
       sm: 767,
       md: 1024,
-      lg: 1140,
-      xl: 1440,
+      lg: 1200
     },
   },
 });
-const IndexPage = () => (
-  <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <HeroSection />
-      </Layout>
-    </ThemeProvider>
-  </StyledEngineProvider>
-)
+const FAKE_API = "https://graphqlzero.almansi.me/api";
+
+const IndexPage = () => {
+  const [post, setPost] = React.useState({});
+  React.useEffect(() => {
+    fetch(FAKE_API, {
+      "method": "POST",
+      "headers": { "content-type": "application/json" },
+      "body": JSON.stringify({
+        query: `{
+          post(id: 1) {
+            id
+            title
+            body
+          }
+        }`
+      })
+    }).then(res => res.json()).then(res => setPost(res))
+  }, [post])
+  return (
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <HeroSection />
+          <section className="container text-center py-10">
+            <h1 className="text-4xl heading mb-5">{post.data?.post?.title}</h1>
+            <p className="text-sm">{post.data?.post?.body}</p>
+          </section>
+        </Layout>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  )
+}
 
 /**
  * Head export to define metadata for the page
