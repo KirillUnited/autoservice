@@ -18,7 +18,7 @@ const getInitValues = () => {
     return result;
 }
 
-export default function OrderForm() {
+export default function OrderForm({ onSuccess }) {
     const {
         values,
         errors,
@@ -33,13 +33,19 @@ export default function OrderForm() {
         }
         setShowAlert(false);
     };
+    const handleFormSubmit = async (e) => {
+        await handleSubmit(e);
+        setTimeout(() => {
+            onSuccess();
+        }, 2000);
+    };
 
     return (
         <>
             {values.isSubmitting && <Loading />}
             {values.formSubmitted && <Snackbar
                 open={showAlert}
-                autoHideDuration={6000}
+                autoHideDuration={2000}
                 onClose={handleAlertHide}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
                 TransitionComponent={Slide}
@@ -48,7 +54,7 @@ export default function OrderForm() {
                     Data are sent
                 </Alert>
             </Snackbar>}
-            <Box component="form" onSubmit={handleSubmit}>
+            <Box component="form" onSubmit={handleFormSubmit}>
                 {textFields.map((field) => {
                     return (
                         <TextField
