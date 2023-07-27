@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { getCustomCSSProp } from "../utils/getCustomCSSProp";
 import { HeroSection } from "../components/Hero";
+import Section1 from "../components/Section1";
 
 const theme = createTheme({
   palette: {
@@ -30,34 +31,30 @@ const theme = createTheme({
     },
   },
 });
-const FAKE_API = "https://graphqlzero.almansi.me/api";
 
 const IndexPage = () => {
-  const [post, setPost] = React.useState({});
-  React.useEffect(() => {
-    fetch(FAKE_API, {
-      "method": "POST",
-      "headers": { "content-type": "application/json" },
-      "body": JSON.stringify({
-        query: `{
-          post(id: 1) {
-            id
-            title
-            body
-          }
-        }`
-      })
-    }).then(res => res.json()).then(res => setPost(res))
-  }, [post])
+  // const [post, setPost] = React.useState({});
+  // React.useEffect(() => {
+  //   fetch(FAKE_API, {
+  //     "method": "POST",
+  //     "headers": { "content-type": "application/json" },
+  //     "body": JSON.stringify({
+  //       query: `{
+  //         post(id: 1) {
+  //           id
+  //           title
+  //           body
+  //         }
+  //       }`
+  //     })
+  //   }).then(res => res.json()).then(res => setPost(res))
+  // }, [post])
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <Layout>
           <HeroSection />
-          <section className="container text-center py-10">
-            <h1 className="text-4xl heading mb-5">{post.data?.post?.title}</h1>
-            <p className="text-sm">{post.data?.post?.body}</p>
-          </section>
+          <Section1 />
         </Layout>
       </ThemeProvider>
     </StyledEngineProvider>
