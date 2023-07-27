@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import HeroCarousel from './HeroCarousel';
 
 const query = graphql`
-query MyQuery {
+query HeroQuery {
     allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(content/hero)/"}}) {
         nodes {
           frontmatter {
