@@ -31,7 +31,6 @@ const theme = createTheme({
     },
   },
 });
-const FAKE_API = "https://graphqlzero.almansi.me/api";
 
 const IndexPage = () => {
   // const [post, setPost] = React.useState({});
