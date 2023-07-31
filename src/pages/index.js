@@ -35,7 +35,7 @@ const theme = createTheme({
 const IndexPage = () => {
   // const [post, setPost] = React.useState({});
   // React.useEffect(() => {
-  //   fetch(FAKE_API, {
+  //   fetch(process.env.FAKE_API, {
   //     "method": "POST",
   //     "headers": { "content-type": "application/json" },
   //     "body": JSON.stringify({
@@ -47,8 +47,12 @@ const IndexPage = () => {
   //         }
   //       }`
   //     })
-  //   }).then(res => res.json()).then(res => setPost(res))
+  //   }).then(res => res.json()).then((res) => {
+  //     setPost(res)
+  //     console.log(post)
+  //   })
   // }, [post])
+
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>

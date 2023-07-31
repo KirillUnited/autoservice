@@ -24,3 +24,11 @@
     @apply text-white bg-primary hover:bg-secondary border-primary hover:border-secondary disabled:border-transparent;
   }
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  transition: color 200ms;
+  &:hover {
+    --swiper-navigation-color: var(--color-secondary);
+  }
+}
