@@ -46,6 +46,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: process.env.WPGRAPHQL_URL || 'https://wpgatsbydemo.wpengine.com/graphql',
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
