@@ -10,3 +10,35 @@
     @apply mb-0;
   }
 }
+.menu {
+  &-list {
+    @apply flex flex-wrap items-center justify-center p-2;
+    &-item {
+      @apply relative;
+      &:hover {
+        .menu-link-text {
+          border-color: currentColor;
+        }
+      }
+    }
+  }
+  &-link {
+    @apply text-white text-sm px-3 leading-8 block;
+    &-text {
+      @apply inline-block transition leading-6;
+      border-bottom: 1px solid transparent;
+    }
+  }
+  &-sublist {
+    @apply flex-col bg-white absolute z-10 hidden hover:flex min-w-max;
+    & > li {
+      border-bottom: 1px solid #f1f1f1;
+      > a {
+        @apply flex justify-between p-4 text-xs hover:text-heading transition;
+        &:hover {
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
+}
