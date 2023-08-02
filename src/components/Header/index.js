@@ -1,10 +1,10 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { menu, autoModels } from "./data"
+import { autoModels } from "./data"
 import logo from "../../assets/images/logo.png"
 import * as styles from "./styles.module.scss"
 import { OrderModal } from "../Modals";
 import HeaderCarousel from "./HeaderCarousel";
+import HeaderMenu from "./HeaderMenu";
 
 const Header = ({ siteTitle }) => {
   return (
@@ -44,26 +44,7 @@ const Header = ({ siteTitle }) => {
       </section>
       <section className="relative bg-gradient-to-r from-primary to-[#0B7CAC]">
         <div className="container">
-          <nav>
-            <ul className="flex flex-wrap items-center justify-center p-2">
-              {Object.entries(menu).map(([key, value], i) => {
-                return (
-                  <li className="relative" key={i}>
-                    <Link to={value?.href ? value.href : ''} className="text-white font-medium px-3 leading-8 peer" key={key}>{key}</Link>
-                    {
-                      value?.submenu
-                      &&
-                      <ul className="flex-col absolute hidden peer-hover:flex hover:flex">
-                        {value.submenu.map((item) => {
-                          return <li key={item}>{item}</li>
-                        })}
-                      </ul>
-                    }
-                  </li>
-                )
-              })}
-            </ul>
-          </nav>
+          <HeaderMenu />
         </div>
       </section>
       <section className="bg-[#F8F8F8]">
