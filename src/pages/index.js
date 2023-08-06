@@ -1,6 +1,5 @@
 import * as React from "react"
 import { StyledEngineProvider, ThemeProvider, createTheme } from "@mui/material";
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { getCustomCSSProp } from "../utils/getCustomCSSProp";
@@ -31,28 +30,7 @@ const theme = createTheme({
     },
   },
 });
-
 const IndexPage = () => {
-  // const [post, setPost] = React.useState({});
-  // React.useEffect(() => {
-  //   fetch(process.env.FAKE_API, {
-  //     "method": "POST",
-  //     "headers": { "content-type": "application/json" },
-  //     "body": JSON.stringify({
-  //       query: `{
-  //         post(id: 1) {
-  //           id
-  //           title
-  //           body
-  //         }
-  //       }`
-  //     })
-  //   }).then(res => res.json()).then((res) => {
-  //     setPost(res)
-  //     console.log(post)
-  //   })
-  // }, [post])
-
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
