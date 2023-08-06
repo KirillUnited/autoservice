@@ -2,34 +2,11 @@ import * as React from "react"
 import { StyledEngineProvider, ThemeProvider, createTheme } from "@mui/material";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { getCustomCSSProp } from "../utils/getCustomCSSProp";
 import { HeroSection } from "../components/Hero";
 import Section1 from "../components/Section1";
+import { themeOptions } from "../../mui.config";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: getCustomCSSProp('--color-primary'),
-    },
-    secondary: {
-      main: getCustomCSSProp('--color-secondary'),
-    },
-    text: {
-      primary: getCustomCSSProp('--color-text'),
-    }
-  },
-  typography: {
-    fontFamily: [getCustomCSSProp('--font-primary')].join(','),
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 767,
-      md: 1024,
-      lg: 1200
-    },
-  },
-});
+const theme = createTheme(themeOptions);
 const IndexPage = () => {
   return (
     <StyledEngineProvider injectFirst>
