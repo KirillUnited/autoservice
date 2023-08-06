@@ -1,10 +1,10 @@
 import * as React from "react"
-import { autoModels } from "./data"
-import logo from "../../assets/images/logo.png"
+import { autoModels, menu } from "./data"
 import * as styles from "./styles.module.scss"
 import { OrderModal } from "../Modals";
 import HeaderCarousel from "./HeaderCarousel";
 import HeaderMenu from "./HeaderMenu";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Header = ({ siteTitle }) => {
   return (
@@ -13,8 +13,8 @@ const Header = ({ siteTitle }) => {
         <div className="container flex flex-wrap justify-between">
           <div className="flex py-2 basis-full md:basis-1/2 gap-2 items-center justify-between">
             <div className={styles.logo}>
-              <img
-                src={logo}
+              <StaticImage
+                src="../../assets/images/logo.png"
                 width={170}
                 height={86}
                 alt={siteTitle}
@@ -32,7 +32,7 @@ const Header = ({ siteTitle }) => {
             </div>
           </div>
           <div className={styles.cta}>
-            <OrderModal></OrderModal>
+            <OrderModal />
             <p className="mb-0 font-semibold"><strong className="font-semibold">Пон. - Пят. 8.00 - 20.00</strong></p>
           </div>
           <div className={`${styles.contacts}`}>
@@ -44,7 +44,7 @@ const Header = ({ siteTitle }) => {
       </section>
       <section className="relative bg-gradient-to-r from-primary to-[#0B7CAC]">
         <div className="container">
-          <HeaderMenu />
+          <HeaderMenu items={menu} />
         </div>
       </section>
       <section className="bg-[#F8F8F8]">

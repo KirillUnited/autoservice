@@ -1,58 +1,13 @@
 import * as React from "react"
 import { StyledEngineProvider, ThemeProvider, createTheme } from "@mui/material";
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { getCustomCSSProp } from "../utils/getCustomCSSProp";
 import { HeroSection } from "../components/Hero";
 import Section1 from "../components/Section1";
+import { themeOptions } from "../../mui.config";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: getCustomCSSProp('--color-primary'),
-    },
-    secondary: {
-      main: getCustomCSSProp('--color-secondary'),
-    },
-    text: {
-      primary: getCustomCSSProp('--color-text'),
-    }
-  },
-  typography: {
-    fontFamily: [getCustomCSSProp('--font-primary')].join(','),
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 767,
-      md: 1024,
-      lg: 1200
-    },
-  },
-});
-
+const theme = createTheme(themeOptions);
 const IndexPage = () => {
-  // const [post, setPost] = React.useState({});
-  // React.useEffect(() => {
-  //   fetch(process.env.FAKE_API, {
-  //     "method": "POST",
-  //     "headers": { "content-type": "application/json" },
-  //     "body": JSON.stringify({
-  //       query: `{
-  //         post(id: 1) {
-  //           id
-  //           title
-  //           body
-  //         }
-  //       }`
-  //     })
-  //   }).then(res => res.json()).then((res) => {
-  //     setPost(res)
-  //     console.log(post)
-  //   })
-  // }, [post])
-
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>

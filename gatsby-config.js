@@ -7,6 +7,9 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+require('dotenv').config({
+  path: `.env`
+})
 module.exports = {
   siteMetadata: {
     title: `СТО на Стебенева 12 в Минске`,
@@ -43,6 +46,12 @@ module.exports = {
       options: {
         name: `content`,
         path: `${__dirname}/src/content`,
+      },
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: process.env.WPGRAPHQL_URL,
       },
     },
     {

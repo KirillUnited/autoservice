@@ -1,14 +1,13 @@
 import React from 'react';
-import { menu } from "./data";
 import * as styles from "./styles.module.scss";
 import { Link } from "gatsby";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function HeaderMenu() {
+export default function HeaderMenu({ items = {} }) {
     return (
         <nav>
             <ul className={`${styles.menuList}`}>
-                {Object.entries(menu).map(([key, value], i) => {
+                {Object.entries(items).map(([key, value], i) => {
                     return (
                         <li className={`${styles.menuListItem} group/item`} key={i}>
                             <Link to={value?.href ? value.href : ''} className={`${styles.menuLink}`} key={key}>
