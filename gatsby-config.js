@@ -57,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Риа Моторс | СТО на Стебенева 12 в Минске`,
+        short_name: `Риа Моторс`,
         start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
