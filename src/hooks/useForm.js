@@ -1,7 +1,6 @@
 import React from "react";
-import { textFields } from "../components/Forms/orderForm.data";
 
-export default function useForm(initialFormValues) {
+export default function useForm(initialFormValues = {}, textFields = []) {
     const [values, setValues] = React.useState({
         ...initialFormValues,
         isSubmitting: false,
