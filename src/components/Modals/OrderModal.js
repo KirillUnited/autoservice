@@ -9,23 +9,17 @@ import OrderForm from "../Forms/OrderForm";
 import * as style from "./OrderModal.module.scss";
 
 const OrderModal = (props) => {
-    const [open, setOpen] = React.useState(false);
+    const [open, toggleOpen] = React.useReducer((state) => !state, false);
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false)
-    }
 
     return (
         <>
-            <Button variant="contained" size="large" className="btn-primary" onClick={handleClickOpen}>Запись на ремонт</Button>
-            <Dialog open={open} onClose={handleClose} maxWidth={`md`} fullScreen={fullScreen}>
+            <Button variant="contained" size="large" className="btn-primary" onClick={toggleOpen}>Запись на ремонт</Button>
+            <Dialog open={open} onClose={toggleOpen} maxWidth={`md`} fullScreen={fullScreen}>
                 <IconButton
                     aria-label="close"
-                    onClick={handleClose}
+                    onClick={toggleOpen}
                     sx={{
                         position: 'absolute',
                         right: 8,
@@ -39,7 +33,7 @@ const OrderModal = (props) => {
                     Запись на ремонт
                 </DialogTitle>
                 <DialogContent>
-                    <OrderForm onSuccess={handleClose} />
+                    <OrderForm onSuccess={toggleOpen} />
                 </DialogContent>
             </Dialog>
         </>
