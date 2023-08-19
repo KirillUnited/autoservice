@@ -21,6 +21,7 @@
   }
   .btn-primary {
     border: 2px solid transparent;
+    border-radius: 0;
     @apply text-white bg-primary hover:bg-secondary border-primary hover:border-secondary disabled:border-transparent;
   }
 }

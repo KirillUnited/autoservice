@@ -25,7 +25,7 @@ export default function OrderForm({ onSuccess }) {
         handleInputChange,
         handleSubmit,
         formIsValid
-    } = useForm(getInitValues());
+    } = useForm(getInitValues(), textFields);
     const [showAlert, setShowAlert] = React.useState(true);
     const handleAlertHide = (event, reason) => {
         if (reason === 'clickaway') {
