@@ -1,9 +1,8 @@
 import React from 'react'
 import HeroCarouselItem from './HeroCarouselItem';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y, Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
+import { A11y, Autoplay, EffectFade, Pagination } from "swiper/modules";
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import * as styles from './HeroCarousel.module.scss';
@@ -14,9 +13,8 @@ export default function HeroCarousel(props) {
     return (
         <Swiper
             className={styles['carousel']}
-            modules={[Navigation, Pagination, Autoplay, A11y, EffectFade]}
+            modules={[Pagination, Autoplay, A11y, EffectFade]}
             pagination={{ clickable: true }}
-            navigation={{ clickable: true }}
             autoplay={{
                 delay: 5000,
             }}

@@ -6,7 +6,7 @@ export default function HeroCarouselItem({ data }) {
     const { img = {}, title = "", subtitle = "", description = "", link = "" } = data;
 
     return (
-        <Card elevation={2} className='relative grid place-items-center min-h-[500px]'>
+        <Card elevation={2} className='relative grid place-items-center min-h-[500px]' sx={{ borderRadius: 0 }}>
             <GatsbyImage
                 className='absolute w-full h-full top-0 left-0 after:absolute after:inset-0 after:bg-transparent after:bg-gradient-to-tr after:from-black'
                 image={getImage(img.file)}
