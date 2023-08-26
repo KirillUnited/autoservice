@@ -6,10 +6,13 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import * as styles from './HeroCarousel.module.scss';
+import PropTypes from "prop-types";
 
-export default function HeroCarousel(props) {
-    const { data } = props;
+HeroCarousel.propTypes = {
+    data: PropTypes.array
+}
 
+export default function HeroCarousel({ data }) {
     return (
         <Swiper
             className={styles['carousel']}
