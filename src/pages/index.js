@@ -5,6 +5,7 @@ import Seo from "../components/seo"
 import { HeroSection } from "../components/Hero";
 import Section1 from "../components/Section1";
 import { themeOptions } from "../../mui.config";
+import Section2 from "../components/Section2";
 
 const theme = createTheme(themeOptions);
 const IndexPage = () => {
@@ -14,6 +15,7 @@ const IndexPage = () => {
         <Layout>
           <HeroSection />
           <Section1 />
+          <Section2 />
         </Layout>
       </ThemeProvider>
     </StyledEngineProvider>
