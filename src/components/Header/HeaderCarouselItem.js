@@ -1,12 +1,11 @@
-import { Link } from 'gatsby';
-import React from 'react'
+import React from 'react';
 
-export default function HeaderCarouselItem({ data }) {
-    const { logo = "", link = "" } = data;
+export default function HeaderCarouselItem({ data, index }) {
+    const { link = "" } = data;
 
     return (
-        <Link to={link} className='relative block h-full'>
-            <div className='bg-contain bg-no-repeat bg-center h-full hover:scale-125 transition-all' style={{ backgroundImage: `url(${logo})` }} />
-        </Link>
+        <a href={`https://riamotors.by${link}`} className='relative block h-full'>
+            <div className='bg-contain bg-no-repeat bg-center h-full hover:scale-125 transition-all' style={{ backgroundImage: `url(https://riamotors.by/wp-content/uploads/2021/04/${index + 1}-150x150.png)` }} />
+        </a>
     )
 }

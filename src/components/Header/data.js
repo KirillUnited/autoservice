@@ -31,7 +31,7 @@ export const autoModels = [
     },
     {
         name: "citroen",
-        link: "/auto/citroen-sitroen/",
+        link: "/auto/lada-lada/",
         logo: "https://riamotors.by/wp-content/uploads/2021/04/4-150x150.png"
     },
     {

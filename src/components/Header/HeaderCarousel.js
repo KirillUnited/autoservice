@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { A11y, Pagination, Autoplay } from "swiper/modules";
 import 'swiper/css';
@@ -36,7 +36,7 @@ export default function HeaderCarousel(props) {
             {data.map((item, index) => {
                 return (
                     <SwiperSlide key={index}>
-                        <HeaderCarouselItem data={item} />
+                        <HeaderCarouselItem data={item} index={index}/>
                     </SwiperSlide>
                 )
             })}
