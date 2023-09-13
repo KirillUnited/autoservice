@@ -53,6 +53,8 @@ export default function Section3({ img }) {
                         className='object-cover'
                         src={certificate}
                         alt='certificate'
+                        decoding="async"
+                        loading="lazy"
                       />
                     </a>
                   </SwiperSlide>
