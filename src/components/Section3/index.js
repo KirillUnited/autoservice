@@ -12,8 +12,7 @@ query Section3Query {
         id
         html
         frontmatter {
-          desc
-          title
+          ...SectionFrontmatterFragment
           certificates
         }
       }

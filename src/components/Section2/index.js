@@ -9,8 +9,7 @@ query Section2Query {
         id
         html
         frontmatter {
-          desc
-          title
+          ...SectionFrontmatterFragment
         }
       }
     }
