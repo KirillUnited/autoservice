@@ -23,7 +23,7 @@ export default function Section1({ childern }) {
     <section className="py-10">
       <div className='container text-center'>
         <h1 className="text-4xl heading mb-5">{frontmatter.title}</h1>
-        <h3 className="text-lg mb-5">{frontmatter.desc}</h3>
+        <h2 className="text-lg mb-5">{frontmatter.description}</h2>
         <div className='text-sm space-y-4' dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
     </section>
