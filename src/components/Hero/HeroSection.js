@@ -7,20 +7,7 @@ query HeroQuery {
     allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(content/hero)/"}}) {
         nodes {
           frontmatter {
-            description
-            subtitle
-            title
-            img {
-              alt
-              file {
-                childImageSharp {
-                    gatsbyImageData(
-                        placeholder: BLURRED
-                        layout: FULL_WIDTH
-                      )
-                }
-              }
-            }
+            ...SectionFrontmatterFragment
             link
           }
           html

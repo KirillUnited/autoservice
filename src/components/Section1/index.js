@@ -8,8 +8,7 @@ query Section1Query {
         id
         html
         frontmatter {
-          desc
-          title
+          ...SectionFrontmatterFragment
         }
       }
     }
@@ -17,16 +16,16 @@ query Section1Query {
 `;
 
 export default function Section1({ childern }) {
-    const data = useStaticQuery(query);
-    const { frontmatter, html } = data?.allMarkdownRemark?.nodes[0] || {};
+  const data = useStaticQuery(query);
+  const { frontmatter, html } = data?.allMarkdownRemark?.nodes[0] || {};
 
-    return (
-        <section className="py-10">
-            <div className='container text-center'>
-              <h1 className="text-4xl heading mb-5">{frontmatter.title}</h1>
-              <h3 className="text-lg mb-5">{frontmatter.desc}</h3>
-              <div className='text-sm space-y-4' dangerouslySetInnerHTML={{__html: html}}></div>
-            </div>
-        </section>
-    )
+  return (
+    <section className="py-10">
+      <div className='container text-center'>
+        <h1 className="text-4xl heading mb-5">{frontmatter.title}</h1>
+        <h2 className="text-lg mb-5">{frontmatter.description}</h2>
+        <div className='text-sm space-y-4' dangerouslySetInnerHTML={{ __html: html }}></div>
+      </div>
+    </section>
+  )
 }

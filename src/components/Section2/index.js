@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const query = graphql`
 query Section2Query {
@@ -9,8 +9,7 @@ query Section2Query {
         id
         html
         frontmatter {
-          desc
-          title
+          ...SectionFrontmatterFragment
         }
       }
     }
@@ -28,13 +27,13 @@ export default function Section2({ img }) {
           <h2 className="text-3xl heading mb-5 text-[#CF2E2E]">{frontmatter.title}</h2>
           <div className='text-sm space-y-4' dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
-        <StaticImage
+        <GatsbyImage
           className='basis-1/5'
           layout='constrained'
-          src="../../assets/images/Sertifikat-RiaMotors-kart-427x600-1.jpg"
+          image={getImage(frontmatter.img.file)}
           height={600}
           width={427}
-          alt="Автосервис РиаМоторс"
+          alt={frontmatter.img.alt}
         />
       </div>
     </section>
